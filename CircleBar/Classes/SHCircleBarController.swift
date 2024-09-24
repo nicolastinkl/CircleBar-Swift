@@ -44,7 +44,7 @@ class SHCircleBarController: UITabBarController {
         
         self.circleView = UIView(frame: .zero)
         circleView.layer.cornerRadius = 30
-        circleView.backgroundColor = .white
+//        circleView.backgroundColor = .systemGray
         circleView.isUserInteractionEnabled = false
         
         self.circleImageView = UIImageView(frame: .zero)
@@ -54,13 +54,11 @@ class SHCircleBarController: UITabBarController {
         
         circleView.addSubview(circleImageView)
         self.view.addSubview(circleView)
-         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+            
+            self.initTabbar()
+        })
         
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        initTabbar()
     }
     
     func initTabbar(){
@@ -134,7 +132,6 @@ class SHCircleBarController: UITabBarController {
             }
             delegate?.tabBarController?(self, didSelect: controller)
         }
-        print("\( self.circleView.frame)")
     }
     private func image(with image: UIImage?, scaledTo newSize: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(newSize, _: false, _: 0.0)
@@ -145,4 +142,5 @@ class SHCircleBarController: UITabBarController {
     }
     
 }
+
 
