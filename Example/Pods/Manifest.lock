@@ -1,0 +1,16 @@
+PODS:
+  - CircleBar (0.8.2)
+
+DEPENDENCIES:
+  - CircleBar (from `../`)
+
+EXTERNAL SOURCES:
+  CircleBar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CircleBar: 5b882eb3870de5bbda42bef1b2ec6c5c533497db
+
+PODFILE CHECKSUM: c85bb2d45d7d4fdfeeaa049dfcacccb3a811d08b
+
+COCOAPODS: 1.10.1
