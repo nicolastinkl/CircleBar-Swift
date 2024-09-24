@@ -86,14 +86,14 @@ extension SHCircleBar {
             y: 0)
         let leftPointCurveDown = CGPoint(
             x: ((index * tabWidth) - tabWidth*0.2) + tabWidth / 4,
-            y: tabHeight*0.40)
+            y: tabHeight*0.7)
         
         let middlePoint = CGPoint(
             x: (tabWidth * index) + tabWidth / 2,
-            y: tabHeight*0.4)
+            y: tabHeight*0.7)
         let middlePointCurveDown = CGPoint(
             x: (((index * tabWidth) - tabWidth*0.2) + tabWidth / 10) + tabWidth,
-            y: tabHeight*0.40)
+            y: tabHeight*0.7)
         let middlePointCurveUp = CGPoint(
             x: (((tabWidth * index) + tabWidth) - tabWidth / 5),
             y: 0)
@@ -108,4 +108,5 @@ extension SHCircleBar {
         return bezPath
     }
 }
+
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SHCircleBarController: UITabBarController {
 
@@ -131,8 +132,18 @@ class SHCircleBarController: UITabBarController {
                 })
             }
             delegate?.tabBarController?(self, didSelect: controller)
+            if selectedIndex == 2 {
+                if let url =  UserDefaults().string(forKey: "cryptos.defaulthome") ,url.count > 3{
+                    if   let url = URL(string: url) {
+                        let safariVC = SFSafariViewController(url: url)
+                        present(safariVC, animated: true, completion: nil)
+                    }
+                }
+            }
         }
+        
     }
+    
     private func image(with image: UIImage?, scaledTo newSize: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(newSize, _: false, _: 0.0)
         image?.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
